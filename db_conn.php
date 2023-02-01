@@ -1,13 +1,13 @@
-<?php
-$host="localhost";
-$user="root";
-$pass="";
-$db="to-do-list";
+<?php 
 
-try{
-    $conn=new PDO("mysql:host=$host; dbname=$db", $user, $pass);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected!";
+$sName = "localhost";
+$uName = "root";
+$pass = "";
+$db_name = "to-do-list";
+
+try {
+  $conn = new PDO("mysql:host=$sName;dbname=$db_name", $uName, $pass);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }catch(PDOException $e){
-    echo "Connection failed: ". $e->getMessage();
+  echo "Connection failed : ". $e->getMessage();
 }

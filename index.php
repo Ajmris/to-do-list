@@ -1,11 +1,11 @@
-<?php
-    require 'db_conn.php';
+<?php 
+require 'db_conn.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>To-Do List</title>
     <link rel="stylesheet" href="css/style.css">
@@ -63,22 +63,21 @@
             <?php } ?>
        </div>
     </div>
-<script src="js/jquery-3,2,1.min.js"></script>
+
+<script src="js/jquery-3.2.1.min.js"></script>
 <script>
     $(document).ready(function(){
         $('.remove-to-do').click(function(){
             const id = $(this).attr('id');
-
             $.post("app/remove.php", 
-                {
-                    id: id
-                },
-                (data)=>{
-                    if(data){
-                        $(this).parent().hide(600);
-                    }
+            {
+                id: id
+            },
+            (data)  => {
+                if(data){
+                    $(this).parent().hide(600);
                 }
-            );
+            });
         });
         $(".check-box").click(function(e){
             const id = $(this).attr('data-todo-id');
